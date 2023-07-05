@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Home.css";
 
 const user_list = ["Alan", "Bob", "Carol", "Dean", "Elin"]; 
-const color_list = ["green", "yellow", "red", "purple", "orange"];
+// const color_list = ["green", "yellow", "red", "purple", "orange"];
 
 function Home() {
     const [messages, setMessages] = useState([]);
@@ -14,11 +14,15 @@ function Home() {
 
   const handleSendMessage = () => {
     if (messageInput.trim() !== "") {
-      const randomUser =
-        user_list[Math.floor(Math.random() * user_list.length)];
+      const randomUser = user_list[Math.floor(Math.random() * user_list.length)];
+      
+      const hours = new Date().getHours();
+      const minutes = new Date().getMinutes();
       const newMessage = {
         username: randomUser,
         message: messageInput,
+        hours:hours,
+        minutes:minutes,
         likes: 0,
       };
       setMessages([...messages, newMessage]);
@@ -84,7 +88,7 @@ function Home() {
                   {message.username.charAt(0)}
                 </span>
                 <span className="username">{message.username}</span>
-                <span className="time">12:34</span>
+                <span className="time">{message.hours}:{message.minutes}</span>
               </div>
               <div className="message-content">
                 <span className="message-text">{message.message}</span>
