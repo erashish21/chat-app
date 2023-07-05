@@ -17,7 +17,7 @@ function Sidebar() {
           <i class="fa-solid fa-plus"></i>
         </div>
         <div className="conversation_item">
-          <span className="item_img">#</span>
+          <span className="item_img" style={{backgroundColor:"yellow"}}>#</span>
           <span className="item_name">Poland Office</span>
         </div>
         <div className="conversation_item" id="introduction">
@@ -27,7 +27,7 @@ function Sidebar() {
           <span className="item_name">Introduction</span>
         </div>
         <div className="conversation_item">
-          <span className="item_img">#</span>
+          <span className="item_img" style={{backgroundColor:"purple"}}>#</span>
           <span className="item_name">India Office</span>
         </div>
       </div>

@@ -1,5 +1,5 @@
 #sidebar{
-    width: 35%;
+    width: 30%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -80,8 +80,8 @@
     margin-left: 1rem;
 }
 #introduction{
-    background-color: rgb(8, 77, 215);
+    background-color: #075E54;
 }
 #intro{
-    background-color: rgb(20, 20, 236);
+    background-color: #075048;
 }

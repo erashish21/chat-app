@@ -72,7 +72,7 @@ function Home() {
           </span>
         </div>
         <div id="message_detail">
-          <span id="message">3/100</span>
+          <span id="message">{messages.length}/100</span>
           <i className="fa-solid fa-user-group"></i>
         </div>
       </div>
@@ -105,10 +105,7 @@ function Home() {
             type="text"  
             placeholder="Type your message..."
           />
-
-          <button onClick={handleSendMessage} id="send">
-            Send
-          </button>
+            <i onClick={handleSendMessage} id="send" class="fa-solid fa-paper-plane"></i>
         </div>
       </div>
     </div>

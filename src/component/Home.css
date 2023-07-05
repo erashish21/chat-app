@@ -3,8 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 65%;
-    /* height: 50vh; */
+    width: 70%;
+    height: 100vh;
     background-color: #e9dfdf;
     position: fixed;
     right: 0;
@@ -16,7 +16,10 @@
     flex-direction: row;
     border-bottom: 1px solid rgb(152, 143, 143);
     justify-content: space-between;
+    background-color: #075E54;
     align-items: center;
+    position: absolute;
+    top: 0;
   }
   #header_detail{
     display: flex;
@@ -25,9 +28,11 @@
   }
   #header_detail_name{
     font-weight: bold;
+    color: white;
   }
   #header_detail_disc{
-    color: rgb(98, 91, 91);
+    color: rgb(227, 218, 218);
+    font-size: 0.9rem;
   }
   #message_detail{
     display: flex;
@@ -37,15 +42,15 @@
     align-items: center;
   }
   #message_detail i{
-    color: rgb(96, 88, 88);
+    color: rgb(231, 226, 226);
   }
   #message{
     margin-right: 1rem;
-    color: rgb(96, 88, 88);
+    color: rgb(232, 229, 229);
   }
   .chat-container {
     width: 100%;
-    height: 85vh;
+    height: 95vh;
     background: transparent;
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -125,43 +130,32 @@
   
   .input-container {
     display: flex;
-    padding: 10px;
+    padding: 10px 10px 0px 10px;
     position: relative;
+    /* margin-top: 3rem; */
   }
-  .emoji-area{
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
-    right: 0;
-  }
-  .emoji-picker{
-    position: absolute; 
-    top: 500px; 
-    right: 0;
-    z-index: 1; 
-  }
+ 
   
   input[type='text'] {
     flex-grow: 1;
-    padding: 8px;
+    padding: 0.5rem 1rem;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 10px;
     outline: none;
   }
   
   #send{
-    margin-left: 10px;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
+    margin-left: 6px;
+    padding: 8px 14px 8px 0px;
+    color: #007bff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 1.2rem;
   }
   
   #send:hover {
-    background-color: #0056b3;
+    color: #0056b3;
   }
 
   .green{
