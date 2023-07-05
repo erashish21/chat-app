@@ -1,7 +1,29 @@
 import React, { useState } from "react";
 import "./Home.css";
 
+const user_list = ["Alan", "Bob", "Carol", "Dean", "Elin"]; 
+
 function Home() {
+    const [messages, setMessages] = useState([]);
+  const [messageInput, setMessageInput] = useState("");
+
+  const handleInputChange = (event) => {
+    setMessageInput(event.target.value);
+  };
+
+  const handleSendMessage = () => {
+    if (messageInput.trim() !== "") {
+      const randomUser =
+        user_list[Math.floor(Math.random() * user_list.length)];
+      const newMessage = {
+        username: randomUser,
+        message: messageInput,
+      };
+      setMessages([...messages, newMessage]);
+      setMessageInput("");
+    }
+  };
+
   return (
     <div className="home">
       <div id="header">
@@ -18,31 +40,35 @@ function Home() {
       </div>
       <div className="chat-container">
         <div className="message-thread">
-          <div className="message">
+        {messages.map((message, index) => (
+          <div key={index} className="message">
             <div className="message_details">
               <div className="message-user">
                 <span
                   className= "img green"
                 >
-                  E
+                  {message.username.charAt(0)}
                 </span>
-                <span className="username">Bob</span>
+                <span className="username">{message.username}</span>
                 <span className="time">12:34</span>
               </div>
               <div className="message-content">
-                <span className="message-text">This is Sharzel</span>
+                <span className="message-text">{message.message}</span>
                 <i className="fa-solid fa-thumbs-up"></i> &nbsp;12
               </div>
             </div>
           </div>
+        ))}
         </div>
         <div className="input-container">
           <input
+          value={messageInput}
+          onChange={handleInputChange}
             type="text"  
             placeholder="Type your message..."
           />
 
-          <button id="send">
+          <button onClick={handleSendMessage} id="send">
             Send
           </button>
         </div>
