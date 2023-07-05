@@ -18,11 +18,19 @@ function Home() {
       const newMessage = {
         username: randomUser,
         message: messageInput,
+        likes: 0,
       };
       setMessages([...messages, newMessage]);
       setMessageInput("");
     }
   };
+
+  const handleLike = (index) => {
+    const updatedMessages = [...messages];
+    updatedMessages[index].likes += 1;
+    setMessages(updatedMessages);
+  };
+
 
   return (
     <div className="home">
@@ -54,7 +62,7 @@ function Home() {
               </div>
               <div className="message-content">
                 <span className="message-text">{message.message}</span>
-                <i className="fa-solid fa-thumbs-up"></i> &nbsp;12
+                <i onClick={()=> handleLike(index)} className="fa-solid fa-thumbs-up"></i>{" "} &nbsp;{message.likes}
               </div>
             </div>
           </div>
