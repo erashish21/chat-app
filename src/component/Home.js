@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Home.css";
 
 const user_list = ["Alan", "Bob", "Carol", "Dean", "Elin"]; 
+const color_list = ["green", "yellow", "red", "purple", "orange"];
 
 function Home() {
     const [messages, setMessages] = useState([]);
@@ -31,6 +32,31 @@ function Home() {
     setMessages(updatedMessages);
   };
 
+  const handleColor = (val) =>{
+    let ans = "";
+    switch (val) {
+        case 'A':
+            ans = 'green';
+            break;
+        case 'B':
+            ans = "yellow";
+            break;
+        case 'C':
+            ans = "red";
+            break;
+        case 'D':
+            ans = "purple";
+            break;
+        case 'E':
+            ans = "orange";
+            break;
+        default:
+            ans = 'red';
+            break;
+    }
+    return ans;
+  }
+
 
   return (
     <div className="home">
@@ -53,7 +79,7 @@ function Home() {
             <div className="message_details">
               <div className="message-user">
                 <span
-                  className= "img green"
+                  className= {`img ${handleColor(message.username.charAt(0))}`}
                 >
                   {message.username.charAt(0)}
                 </span>
