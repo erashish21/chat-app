@@ -4,7 +4,7 @@ import "./Home.css";
 import Picker from "emoji-picker-react";
 
 
-const user_list = ["Sr.Doctor", "Jr.Doctor", "Nurse", "Dean", "Elin"];
+const user_list = ["PubNub Bot", "Gregory", "Elin Emmanuel", "Rolande Raimondi"];
 // const color_list = ["green", "yellow", "red", "purple", "orange"];
 
 function Home() {

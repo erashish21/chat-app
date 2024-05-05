@@ -7,7 +7,7 @@ function Sidebar() {
         <span id="img">RR</span>
         <span id="green"></span>
         <div id="username">
-          <span id="name">Sr Doctor</span>
+          <span id="name">Rolande Raimondi</span>
           <span>Research Nurse</span>
         </div>
       </div>
@@ -18,17 +18,17 @@ function Sidebar() {
         </div>
         <div className="conversation_item">
           <span className="item_img" style={{backgroundColor:"yellow"}}>#</span>
-          <span className="item_name">Mediacl Office</span>
+          <span className="item_name">Poland Office</span>
         </div>
         <div className="conversation_item" id="introduction">
           <span className="item_img" id="intro">
             #
           </span>
-          <span className="item_name">Hospital</span>
+          <span className="item_name">Introduction</span>
         </div>
         <div className="conversation_item">
           <span className="item_img" style={{backgroundColor:"purple"}}>#</span>
-          <span className="item_name">Indian Hospiat office</span>
+          <span className="item_name">India office</span>
         </div>
       </div>
     </div>
