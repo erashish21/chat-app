@@ -3,16 +3,20 @@ import "./Home.css";
 
 import Picker from "emoji-picker-react";
 
-
-const user_list = ["PubNub Bot", "Gregory", "Elin Emmanuel", "Rolande Raimondi"];
+const user_list = [
+  "PubNub Bot",
+  "Gregory",
+  "Elin Emmanuel",
+  "Rolande Raimondi",
+];
 // const color_list = ["green", "yellow", "red", "purple", "orange"];
 
 function Home() {
   const [messages, setMessages] = useState([]);
   const [messageInput, setMessageInput] = useState("");
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-const [selectedEmoji, setSelectedEmoji] = useState(null);
-const emojiPickerRef = useRef(null);
+  const [selectedEmoji, setSelectedEmoji] = useState(null);
+  const emojiPickerRef = useRef(null);
 
   const handleInputChange = (event) => {
     setMessageInput(event.target.value);
@@ -44,21 +48,17 @@ const emojiPickerRef = useRef(null);
   };
 
   const handleShowEmojiPicker = () => {
-    if(showEmojiPicker == true){
-        setShowEmojiPicker(false);
+    if (showEmojiPicker == true) {
+      setShowEmojiPicker(false);
+    } else {
+      setShowEmojiPicker(true);
     }
-    else{
-        setShowEmojiPicker(true);
-    }
-    
   };
-  
 
   const handleEmojiSelect = (emoji) => {
     setSelectedEmoji(emoji);
     setMessageInput(messageInput + emoji.emoji);
   };
-  
 
   const handleColor = (val) => {
     let ans = "";
@@ -128,16 +128,16 @@ const emojiPickerRef = useRef(null);
           ))}
         </div>
         {showEmojiPicker && (
-      <div ref={emojiPickerRef} className="emoji-picker-container">
-        <Picker
-          onEmojiClick={handleEmojiSelect}
-          disableSearchBar
-          native
-          emojiTooltip
-          pickerStyle={{ width: 'auto' }}
-        />
-      </div>
-    )}
+          <div ref={emojiPickerRef} className="emoji-picker-container">
+            <Picker
+              onEmojiClick={handleEmojiSelect}
+              disableSearchBar
+              native
+              emojiTooltip
+              pickerStyle={{ width: "auto" }}
+            />
+          </div>
+        )}
 
         <div className="input-container">
           <input
@@ -146,9 +146,22 @@ const emojiPickerRef = useRef(null);
             type="text"
             placeholder="Type your message..."
           />
-          <i style={{marginTop:"0.6rem",marginLeft:"-2rem",marginRight:'3rem',fontSize:'1.2rem'}} onClick={handleShowEmojiPicker} className="fa-solid fa-grin"></i>
           <i
-          style={{marginRight:"0.8rem",marginLeft:"-1rem",fontSize:'1.4rem'}}
+            style={{
+              marginTop: "0.6rem",
+              marginLeft: "-2rem",
+              marginRight: "3rem",
+              fontSize: "1.2rem",
+            }}
+            onClick={handleShowEmojiPicker}
+            className="fa-solid fa-grin"
+          ></i>
+          <i
+            style={{
+              marginRight: "0.8rem",
+              marginLeft: "-1rem",
+              fontSize: "1.4rem",
+            }}
             onClick={handleSendMessage}
             id="send"
             class="fa-solid fa-paper-plane"
